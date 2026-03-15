@@ -184,8 +184,8 @@ export default function HomePageClient() {
             Targeted drills for every skill level.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {MODULES.map(mod => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {MODULES.slice(0, 6).map(mod => (
               <Link
                 key={mod.href}
                 href={mod.href}
@@ -202,6 +202,26 @@ export default function HomePageClient() {
               </Link>
             ))}
           </div>
+          {MODULES.length > 6 && (
+            <div className="flex justify-center mt-3">
+              {MODULES.slice(6).map(mod => (
+                <Link
+                  key={mod.href}
+                  href={mod.href}
+                  className={`group flex items-start gap-3 bg-gray-900/40 rounded-xl p-4 border transition-all duration-200 text-left hover:bg-gray-900/70 hover:translate-y-[-1px] w-full sm:w-1/2 ${BORDER_COLORS[mod.color]}`}
+                >
+                  <div className={`w-2 h-2 rounded-full mt-1.5 shrink-0 ${DOT_COLORS[mod.color]}`} />
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <span className="font-medium text-gray-200 text-sm group-hover:text-white transition-colors">{mod.title}</span>
+                      <span className={`text-[9px] font-medium px-1.5 py-0.5 rounded ${TAG_COLORS[mod.color]}`}>{mod.level}</span>
+                    </div>
+                    <p className="text-gray-600 text-xs mt-0.5">{mod.desc}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
         </section>
 
         {/* ─── Section 5: Footer ─── */}
