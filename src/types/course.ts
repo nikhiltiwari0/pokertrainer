@@ -9,6 +9,7 @@ export interface ChapterQuizQuestion {
 export interface ChapterSection {
   heading: string;
   content: string;
+  illustration?: string;
 }
 
 export interface Chapter {

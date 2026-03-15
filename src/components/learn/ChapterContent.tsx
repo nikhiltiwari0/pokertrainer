@@ -1,6 +1,7 @@
 'use client';
 
 import { ChapterSection } from '@/types/course';
+import { ILLUSTRATION_REGISTRY } from '@/components/illustrations';
 
 interface ChapterContentProps {
   sections: ChapterSection[];
@@ -41,16 +42,27 @@ function renderContent(content: string) {
 export default function ChapterContent({ sections }: ChapterContentProps) {
   return (
     <div className="space-y-10">
-      {sections.map((section, idx) => (
-        <div key={idx} className="space-y-3">
-          <h2 className="font-display text-xl sm:text-2xl text-gray-100 border-b border-gray-800/40 pb-2">
-            {section.heading}
-          </h2>
-          <div className="space-y-2">
-            {renderContent(section.content)}
+      {sections.map((section, idx) => {
+        const Illustration = section.illustration
+          ? ILLUSTRATION_REGISTRY[section.illustration]
+          : null;
+
+        return (
+          <div key={idx} className="space-y-3">
+            <h2 className="font-display text-xl sm:text-2xl text-gray-100 border-b border-gray-800/40 pb-2">
+              {section.heading}
+            </h2>
+            <div className="space-y-2">
+              {renderContent(section.content)}
+            </div>
+            {Illustration && (
+              <div className="pt-3">
+                <Illustration />
+              </div>
+            )}
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }

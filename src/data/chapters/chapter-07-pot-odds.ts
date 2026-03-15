@@ -9,6 +9,7 @@ export const chapter07: Chapter = {
     {
       heading: 'Pot odds in plain language',
       content: `Pot odds answer one question: "Is this call worth it?"\n\nHere's the idea. The pot has money in it. Your opponent bets. Now you need to decide whether to call. Pot odds compare the cost of calling to the total pot you'd win.\n\nThe formula: Call Amount / (Pot + Opponent's Bet + Your Call)\n\nSay the pot is 100, your opponent bets 50, and you'd need to call 50 to stay in. Your pot odds are 50 / (100 + 50 + 50) = 50/200 = 25%. That means you need to win this hand at least 25% of the time for calling to be profitable.\n\nIf your hand wins more than 25% of the time, you call. If it wins less, you fold. That's it. The rest of this chapter is just about figuring out that win percentage.`,
+      illustration: 'pot-odds-visual',
     },
     {
       heading: 'Counting outs',

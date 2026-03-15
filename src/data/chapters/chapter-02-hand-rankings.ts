@@ -9,6 +9,7 @@ export const chapter02: Chapter = {
     {
       heading: 'The ten hands, strongest to weakest',
       content: `Every five-card poker hand fits into one of these ten categories. If two players have different categories, the higher one wins. Simple as that.\n\n1. Royal Flush: A, K, Q, J, 10, all the same suit. You'll probably never see one in person.\n\n2. Straight Flush: five cards in a row, same suit. Like 9-8-7-6-5, all hearts.\n\n3. Four of a Kind (quads): four cards of the same rank, like four kings.\n\n4. Full House: three of a kind plus a pair. Players call this a "boat." Example: three queens and two eights.\n\n5. Flush: five cards of the same suit that aren't in sequence. Ace-high flushes are the strongest.\n\n6. Straight: five cards in a row with mixed suits. Like 9-8-7-6-5 across different suits.\n\n7. Three of a Kind: three cards of the same rank.\n\n8. Two Pair: two separate pairs, like jacks and fives.\n\n9. One Pair: two cards of the same rank.\n\n10. High Card: nothing. Your highest card is all you've got.`,
+      illustration: 'hand-rankings-chart',
     },
     {
       heading: 'The ones people mix up',

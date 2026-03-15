@@ -9,6 +9,7 @@ export const chapter04: Chapter = {
     {
       heading: 'What position means',
       content: `Position is where you sit relative to the dealer button, and it determines when you have to act in each betting round. The later you act, the better, because you get to watch everyone else make their decisions first.\n\nIn a 6-player game (called "6-max," which is the most common online format), the six seats are:\n\n- UTG (Under the Gun): first to act preflop. Hardest seat at the table.\n- HJ (Hijack): second to act. Still tough.\n- CO (Cutoff): one before the button. Starting to get comfortable.\n- BTN (Button): the dealer seat. Best position in the game.\n- SB (Small Blind): posts the small forced bet. Has position preflop but acts first after the flop.\n- BB (Big Blind): posts the big forced bet. Gets to act last preflop but first post-flop.`,
+      illustration: 'position-diagram',
     },
     {
       heading: 'Why acting last is such a big deal',

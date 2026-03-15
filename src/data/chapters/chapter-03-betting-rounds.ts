@@ -9,6 +9,7 @@ export const chapter03: Chapter = {
     {
       heading: 'Preflop',
       content: `The small blind and big blind post their forced bets. Then everyone gets two cards face down.\n\nBetting starts with the player to the left of the big blind. This seat is called "Under the Gun" (UTG) because you're first to act with no information about what anyone else wants to do. From UTG, you can fold (toss your cards), call (match the big blind), or raise (put in more than the big blind, minimum 2x).\n\nAction moves clockwise around the table. The big blind acts last preflop, and if nobody raised, they can simply "check" (stay in without adding money) since they already have a bet in.`,
+      illustration: 'betting-rounds-flow',
     },
     {
       heading: 'The flop',
