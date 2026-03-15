@@ -206,7 +206,7 @@ export default function HomePageClient() {
 
         {/* ─── Section 5: Footer ─── */}
         <p className="text-center text-gray-700 text-xs animate-slide-up delay-4" style={{ animationFillMode: 'both' }}>
-          No sign-up required. Runs entirely in your browser.
+          No sign-up required.
         </p>
       </div>
     </div>
