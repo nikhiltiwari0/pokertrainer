@@ -9,11 +9,11 @@ interface PokerTableProps {
 }
 
 const SEAT_POSITIONS: Record<Position, { top: string; left: string }> = {
-  UTG: { top: '15%', left: '80%' },
-  HJ: { top: '75%', left: '80%' },
-  CO: { top: '90%', left: '50%' },
-  BTN: { top: '75%', left: '20%' },
-  SB: { top: '15%', left: '20%' },
+  UTG: { top: '18%', left: '88%' },
+  HJ: { top: '78%', left: '88%' },
+  CO: { top: '95%', left: '50%' },
+  BTN: { top: '78%', left: '12%' },
+  SB: { top: '18%', left: '12%' },
   BB: { top: '5%', left: '50%' },
 };
 
@@ -21,7 +21,7 @@ export default function PokerTable({ playerPosition, priorActions }: PokerTableP
   const actionMap = new Map(priorActions.map(a => [a.position, a.action]));
 
   return (
-    <div className="relative w-full max-w-lg mx-auto aspect-[4/3]">
+    <div className="relative w-full max-w-3xl mx-auto aspect-[2/1]">
       {/* Table felt */}
       <div className="absolute inset-4 sm:inset-6 rounded-[50%] bg-gradient-to-br from-felt to-felt-dark border-2 border-emerald-900/60 shadow-[inset_0_2px_30px_rgba(0,0,0,0.4),0_0_40px_rgba(26,92,58,0.1)]" />
 

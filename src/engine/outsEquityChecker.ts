@@ -90,12 +90,16 @@ const DRAW_SETUPS: DrawSetup[] = [
       const suits: Suit[] = ['hearts', 'diamonds', 'spades', 'clubs'];
       const flushSuit = suits[Math.floor(Math.random() * suits.length)];
       const otherSuits = suits.filter(s => s !== flushSuit);
+      const highRanks: Rank[] = ['A', 'K', 'Q'];
+      const overcard = highRanks[Math.floor(Math.random() * highRanks.length)];
+      const lowRanks: Rank[] = ['8', '7', '6', '5', '4', '3'];
+      const shuffledLow = [...lowRanks].sort(() => Math.random() - 0.5);
       return {
-        holeCards: [card('A', flushSuit), card('8', flushSuit)] as [Card, Card],
+        holeCards: [card(overcard, flushSuit), card(shuffledLow[0], flushSuit)] as [Card, Card],
         board: [
-          card('6', flushSuit),
-          card('T', flushSuit),
-          card('3', otherSuits[0]),
+          card(shuffledLow[1], flushSuit),
+          card(shuffledLow[2], flushSuit),
+          card(shuffledLow[3], otherSuits[0]),
         ],
       };
     },

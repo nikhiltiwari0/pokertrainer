@@ -139,7 +139,7 @@ export const POSTFLOP_SCENARIOS: PostflopScenario[] = [
     id: 'pf9',
     street: 'river',
     holeCards: [c('A', 'hearts'), c('5', 'hearts')],
-    board: [c('K', 'hearts'), c('9', 'hearts'), c('6', 'clubs'), c('2', 'diamonds'), c('J', 'spades')],
+    board: [c('K', 'hearts'), c('9', 'hearts'), c('6', 'hearts'), c('2', 'diamonds'), c('J', 'spades')],
     heroPosition: 'BTN',
     villainPosition: 'BB',
     potSize: 16,

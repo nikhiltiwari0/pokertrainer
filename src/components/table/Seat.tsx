@@ -27,7 +27,7 @@ export default function Seat({ position, isPlayer, action }: SeatProps) {
     <div className="flex flex-col items-center gap-0.5">
       <div
         className={`
-          w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold
+          w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center text-sm sm:text-base font-bold
           transition-all duration-200
           ${isPlayer
             ? 'bg-gold/20 text-gold border-2 border-gold/40 shadow-[0_0_16px_rgba(201,168,76,0.15)]'

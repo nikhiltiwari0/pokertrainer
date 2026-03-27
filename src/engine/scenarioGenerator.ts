@@ -113,7 +113,7 @@ function buildPriorActions(
 function getAvailableActions(type: ScenarioType): PlayerAction[] {
   switch (type) {
     case 'RFI':
-      return ['fold', 'raise'];
+      return ['fold', 'call', 'raise'];
     case 'FACING_RAISE':
       return ['fold', 'call', 'raise'];
     case 'FACING_3BET':

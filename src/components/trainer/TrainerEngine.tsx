@@ -37,7 +37,7 @@ export default function TrainerEngine() {
   return (
     <div className="flex-1 flex flex-col">
       {/* Status bar */}
-      <div className="flex items-center justify-end px-5 py-2 gap-3">
+      <div className="flex items-center justify-end px-5 py-1 gap-3">
         {stats.currentStreak > 0 && (
           <span className="text-sm text-gold font-medium">
             {stats.currentStreak} streak
@@ -56,7 +56,7 @@ export default function TrainerEngine() {
 
       <div className="flex-1 flex flex-col lg:flex-row">
         {/* Main area */}
-        <div className="flex-1 flex flex-col items-center justify-center p-4 sm:p-6 gap-6">
+        <div className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6">
           {state.phase === 'idle' && (
             <div className="text-center space-y-8 animate-slide-up max-w-md">
               <div className="space-y-3">
@@ -104,34 +104,48 @@ export default function TrainerEngine() {
           )}
 
           {state.phase !== 'idle' && state.currentScenario && (
-            <div className="w-full max-w-2xl space-y-5 animate-fade-in">
-              <ScenarioInfo scenario={state.currentScenario} />
-
-              <PokerTable
-                playerPosition={state.currentScenario.playerPosition}
-                priorActions={state.currentScenario.priorActions}
-              />
-
-              <div className="flex justify-center">
-                <HoleCards cards={state.currentScenario.holeCards} />
+            <div className="w-full h-full max-w-6xl animate-fade-in relative">
+              {/* Table fills the center */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-full max-w-3xl">
+                  <PokerTable
+                    playerPosition={state.currentScenario.playerPosition}
+                    priorActions={state.currentScenario.priorActions}
+                  />
+                </div>
               </div>
 
-              <div className="text-center">
-                <span className="text-gray-500 text-sm font-mono tracking-wider">
-                  {state.currentScenario.handNotation}
-                </span>
+              {/* Top-left: scenario info */}
+              <div className="absolute top-2 left-2 sm:top-4 sm:left-6 z-10">
+                <ScenarioInfo scenario={state.currentScenario} />
               </div>
 
-              {state.phase === 'awaiting_action' && (
-                <ActionButtons
-                  availableActions={state.currentScenario.availableActions}
-                  onAction={submitAction}
-                  disabled={false}
-                />
-              )}
+              {/* Bottom-left: hole cards */}
+              <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-6 z-10">
+                <div className="flex flex-col items-start gap-1">
+                  <HoleCards cards={state.currentScenario.holeCards} />
+                  <span className="text-gray-400 text-sm font-mono tracking-wider ml-1">
+                    {state.currentScenario.handNotation}
+                  </span>
+                </div>
+              </div>
 
+              {/* Bottom-right: action buttons */}
+              <div className="absolute bottom-2 right-2 sm:bottom-4 sm:right-6 z-10">
+                {state.phase === 'awaiting_action' && (
+                  <ActionButtons
+                    availableActions={state.currentScenario.availableActions}
+                    onAction={submitAction}
+                    disabled={false}
+                  />
+                )}
+              </div>
+
+              {/* Feedback overlay (centered) */}
               {state.phase === 'showing_feedback' && state.lastResult && (
-                <FeedbackDisplay result={state.lastResult} onNext={advance} />
+                <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/60 backdrop-blur-sm rounded-xl">
+                  <FeedbackDisplay result={state.lastResult} onNext={advance} />
+                </div>
               )}
             </div>
           )}

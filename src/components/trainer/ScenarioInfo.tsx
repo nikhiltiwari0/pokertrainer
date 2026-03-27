@@ -12,7 +12,9 @@ export default function ScenarioInfo({ scenario }: ScenarioInfoProps) {
   let description = '';
   switch (type) {
     case 'RFI':
-      description = `Folded to you in ${playerPosition}. Open or fold?`;
+      description = playerPosition === 'UTG'
+        ? `You're first to act in ${playerPosition}. Open or fold?`
+        : `Folded to you in ${playerPosition}. Open or fold?`;
       break;
     case 'FACING_RAISE':
       description = `${raiserPosition} raises. Action on you in ${playerPosition}.`;
@@ -29,11 +31,11 @@ export default function ScenarioInfo({ scenario }: ScenarioInfoProps) {
   };
 
   return (
-    <div className="text-center space-y-1.5">
-      <span className="inline-block px-3 py-0.5 rounded-full text-[10px] font-medium bg-gold/10 text-gold/80 border border-gold/15 tracking-wide uppercase">
+    <div className="space-y-1.5">
+      <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-gold/10 text-gold/80 border border-gold/15 tracking-wide uppercase">
         {typeLabels[type]}
       </span>
-      <p className="text-gray-300 text-sm sm:text-base">{description}</p>
+      <p className="text-gray-200 text-base sm:text-lg font-medium">{description}</p>
     </div>
   );
 }

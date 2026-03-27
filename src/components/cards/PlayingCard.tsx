@@ -15,7 +15,7 @@ export default function PlayingCard({ card, className = '' }: PlayingCardProps) 
   return (
     <div
       className={`
-        relative w-20 h-28 sm:w-24 sm:h-36 rounded-xl
+        relative w-20 h-28 sm:w-28 sm:h-40 rounded-xl
         bg-card-face border border-card-border
         shadow-[0_4px_16px_rgba(0,0,0,0.4),0_1px_3px_rgba(0,0,0,0.2)]
         select-none flex flex-col justify-between p-1.5 sm:p-2

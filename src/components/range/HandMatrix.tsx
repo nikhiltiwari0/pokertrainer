@@ -40,8 +40,8 @@ export default function HandMatrix({ data, scenarioLabel }: HandMatrixProps) {
               <div
                 key={cell.notation}
                 className={`
-                  w-5 h-5 sm:w-7 sm:h-7 flex items-center justify-center
-                  text-[7px] sm:text-[9px] font-mono rounded-sm
+                  aspect-square w-6 sm:w-8 flex items-center justify-center
+                  text-[8px] sm:text-[10px] font-mono rounded-sm
                   transition-all duration-100
                   ${ACTION_COLORS[cell.action]}
                   ${cell.isHighlighted ? HIGHLIGHT_RING : ''}

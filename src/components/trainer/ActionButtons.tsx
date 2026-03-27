@@ -38,7 +38,7 @@ export default function ActionButtons({ availableActions, onAction, disabled }: 
             disabled={disabled}
             className={`
               ${config.colors}
-              px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg text-white
+              px-8 sm:px-10 py-3.5 sm:py-4 rounded-xl font-semibold text-lg sm:text-xl text-white
               transition-all duration-200 border
               disabled:opacity-40 disabled:cursor-not-allowed
               shadow-lg hover:shadow-xl active:shadow-md
